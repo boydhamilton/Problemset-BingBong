@@ -2,25 +2,17 @@
 #include<stdlib.h>
 #include<stdio.h>
 
+int cmp(const void* a, const void* b){
+    return -(*(int*)a)+(*(int*)b);
+}
+
 float watermelons(int* in, int N, int A){
-    int c =0,s= 0;
-    for(int i=0; i<A; i++){
-        int a, best = -10, ti; // dont want below 1
-        for(int j=0; j<N; j++){ // start at 1, best is at 0
-            a = in[j];
-            if(a > best){
-                best = a;
-                ti = j;
-            }
-        }
-        if(s+best > s){
-            s+=best;
-            c++;
-        }
-        in[ti] = -11;
-    }
+    int s= 0;
+    qsort(in, N, sizeof(int), cmp);
+    for(int i=0; i<A; i++)
+        s+=in[i];
     
-    return (float)s/(float)c;
+    return (float)s/(float)A;
 }
 
 int main(){
