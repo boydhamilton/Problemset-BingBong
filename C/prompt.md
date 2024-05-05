@@ -24,11 +24,7 @@ ABCD
 ```
 8
 ```
-*Despite all characters having equal count, we cannot have each bitset be equal because there are not enough valid permutations*<br>/`
-*A -> 0 leading bit, for this example it will be 0* <br>
-*B -> 10 prefixed with the bit that is not the leading bit*<br>
-*C -> 11 other permutation of two bits prefixed with nonleading bit*<br>
-*D -> 110 cannot have any more valid two bit bitsets, we overflow to three*
+
 
 **Input**
 ```
